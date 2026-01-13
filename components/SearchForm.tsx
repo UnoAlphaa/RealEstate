@@ -1,56 +1,57 @@
 "use client"
+
 import { useForm } from "react-hook-form"
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "./ui/form"
-import { Input } from "./ui/input"
-import { Select, SelectContent, SelectTrigger, SelectItem, SelectValue } from "./ui/select"
-import { format } from "date-fns"
-import { Calendar as CalendarIcon } from "lucide-react"
-import { cn } from "@/lib/utils"
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from "./ui/form"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select"
 import { Button } from "./ui/button"
-import { Calendar } from "./ui/calendar"
+import { Input } from "./ui/input"
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover"
+import { cn } from "@/lib/utils"
+import { format } from "date-fns"
+import { Calendar } from "./ui/calendar"
+import { CalendarIcon } from "lucide-react"
 
 const SearchForm = () => {
     const form = useForm();
   return (
-    <div className="grid gap-2 p-2 rounded-xl w-full items-end bg-black sm:grid-cols-2 lg:grid-cols-4">
+    <div className='grid gap-2 p-2 rounded-xl w-full items-end bg-black sm:grid-cols-2 lg:grid-cols-4'>
         <Form {...form}>
-            <FormField control={form.control} name="Address" render={({field})=>{
-                return(
-                    <FormItem>
-                        <FormLabel className="text-white">Property</FormLabel>
-                        <Select>
-                            <SelectTrigger className="w-full bg-white">
-                                <SelectValue placeholder="Type" />
-                            </SelectTrigger>
-                            <SelectContent>
-                                <SelectItem value="buy">Buy</SelectItem>
-                                <SelectItem value="sell">Sell</SelectItem>
-                                <SelectItem value="rent">Rent</SelectItem>
-                            </SelectContent>
-                        </Select>
-                    </FormItem>
-                )
-            }}>
+                <FormField control={form.control} name="Address" render={({field})=>{
+                    return(
+                        <FormItem>
+                            <FormLabel className="text-white">property</FormLabel>
+                            <Select>
+                                <SelectTrigger className="w-full bg-white">
+                                    <SelectValue placeholder="Type" />
+                                </SelectTrigger>
+                                    <SelectContent>
+                                        <SelectItem value="buy">Buy</SelectItem>
+                                        <SelectItem value="sell">Sell</SelectItem>
+                                        <SelectItem value="rent">Rent</SelectItem>
+                                    </SelectContent>
+                            </Select>
+                        </FormItem>
+                    )
+                }}>
 
-            </FormField>
-
-            <FormField control={form.control} name="Address" render={({field})=>{
-                return(
-                    <FormItem>
+                </FormField>
+                 
+                 <FormField control={form.control} name="Address" render={({field})=>{
+                    return(
+                       <FormItem>
                         <FormLabel className="text-white">Address</FormLabel>
                         <FormControl>
-                            <Input
-                            placeholder="search by Address"
-                            className="text-slate-800 bg-white"
+                            <Input placeholder="search by address"
+                            className="bg-white text-slate-800"
                             />
                         </FormControl>
-                    </FormItem>
-                )
-            }}>
-            </FormField>
+                       </FormItem>
+                    )
+                 }}>
 
-        <FormField
+                 </FormField>
+
+                 <FormField
           control={form.control}
           name="add"
           render={({ field }) => (
@@ -75,7 +76,7 @@ const SearchForm = () => {
                     </Button>
                   </FormControl>
                 </PopoverTrigger>
-                <PopoverContent className="w-auto p-0" align="start">
+                <PopoverContent  className="w-auto p-0" align="start">
                   <Calendar
                     mode="single"
                     selected={field.value}

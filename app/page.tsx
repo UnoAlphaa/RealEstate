@@ -1,18 +1,16 @@
-import AboutUs from "@/components/AboutUs"
-import Featured from "@/components/Featured"
-import Hero from "@/components/Hero"
-import HowItWork from "@/components/HowItWork"
-import Navbar from "@/components/Navbar"
-import Services from "@/components/Services"
-import Testimonials from "@/components/Testimonials"
-import Faq from "@/components/Faq"
-import Footer from "@/components/Footer"
-
-
-const Home = () => {
+import React from 'react'
+import Navbar from '@/components/Navbar'
+import Hero from '@/components/Hero'
+import HowItWork from '@/components/HowItWork'
+import Featured from '@/components/Featured'
+import Services from '@/components/Services'
+import AboutUs from '@/components/AboutUs'
+import Testimonials from '@/components/Testimonials'
+import Faq from '@/components/Faq'
+const page = () => {
   return (
-    <>
-      <Navbar />
+    <div>
+      <Navbar/>
       <Hero/>
       <HowItWork/>
       <Featured/>
@@ -20,9 +18,8 @@ const Home = () => {
       <AboutUs/>
       <Testimonials/>
       <Faq/>
-      <Footer/>
-    </>
+    </div>
   )
 }
 
-export default Home
+export default page

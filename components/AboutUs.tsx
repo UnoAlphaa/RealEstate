@@ -6,7 +6,7 @@ const AboutUs = () => {
     <div className='container mx-auto pb-10 my-20 border-b'>
         <div className="mb-8 px-4">
             <h2 className='text-3xl sm:text-4xl lg:text-5xl tracking-tighter text-center'>About Us</h2>
-            <p className='tracking-tighter text-center py-6 text-lg lg:pr-20 max-w-4xl mx-auto w-full'>{ABOUT_US_TEXT}</p>
+            <p className='tracking-tighter text-center py-6 text-md  lg:text-lg lg:pr-20 max-w-4xl mx-auto w-full'>{ABOUT_US_TEXT}</p>
         </div>
         <div className="flex flex-wrap text-center">
             <div className="w-full border-neutral-700 lg:border-r p-6 lg:w-1/2">

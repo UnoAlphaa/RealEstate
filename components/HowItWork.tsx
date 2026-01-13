@@ -1,25 +1,32 @@
-import { HOW_IT_WORKS } from '@/constants'
-import { CircleCheckBig } from 'lucide-react'
-import React from 'react'
+import { HOW_IT_WORKS } from "@/constants"
+import { CircleCheckBig } from "lucide-react"
+import AnimateOnScroll from './ui/AnimateOnScroll'
 
 const HowItWork = () => {
   return (
-    <div className='container mx-auto my-10 border-b pb-10'>
-        <h2 className="text-center text-3xl tracking-tighter sm:text-4xl lg:text-5xl">{HOW_IT_WORKS.title}</h2>
-        <p className='max-w-4xl my-10 text-neutral-800 text-center mx-auto'>{HOW_IT_WORKS.content}</p>
-        <div className="work relative h-[540px] rounded-xl">
-            <div className="absolute left-0 top-0 h-full overflow-y-hidden p-10 md:p-20">
+    <div className="container mx-auto my-10 pb-10 border-b">
+        <AnimateOnScroll>
+          <h2 className="text-center text-3xl tracking-tighter sm:text-4xl lg:text-5xl">{HOW_IT_WORKS.title}</h2>
+        </AnimateOnScroll>
+        <AnimateOnScroll delay={200}>
+          <p className="max-w-4xl text-neutral-800 my-10 text-center mx-auto">{HOW_IT_WORKS.content}</p>
+        </AnimateOnScroll>
+
+        <AnimateOnScroll delay={300}>
+          <div className="work h-[580px] rounded-xl relative">
+              <div className="absolute top-2 pl-20 my-10 py-3">
                 {HOW_IT_WORKS.steps.map((step, index)=>(
                     <div key={index}>
-                        <div className="flex items-center">
-                        <CircleCheckBig className='mr-4 text-green-400'/>
-                        <h6 className='font-medium uppercase text-neutral-200'>{step.title}</h6>
+                        <div className="flex items-center gap-4 py-2">
+                            <CircleCheckBig className="text-green-400"/>
+                            <h6 className="font-medium uppercase text-neutral-200">{step.title}</h6>
                         </div>
-                        <p className='my-2 max-w-80 p-2 text-white'>{step.text}</p>
+                        <p className="my-2 text-white max-w-80 p-2">{step.text}</p>
                     </div>
                 ))}
             </div>
-        </div>
+          </div>
+        </AnimateOnScroll>
     </div>
   )
 }
